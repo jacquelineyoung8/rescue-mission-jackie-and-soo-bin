@@ -1,0 +1,7 @@
+<ul>
+<% @questions.each do |question| %>
+  <li>
+    <%= link_to "#{question.title}", question_path(question) %>
+    <%= question.created_at.strftime("(Posted on %B %d, %Y)") %></li>
+<% end %>
+</ul>

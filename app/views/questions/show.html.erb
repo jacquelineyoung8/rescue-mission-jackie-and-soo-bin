@@ -1,0 +1,19 @@
+<h1><%= @question.title %></h1>
+
+<h2><%= @question.description %></h2>
+
+<%= form_for [@question, @answer] do |f| %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% @answers.each do |answer| %>
+  <li><%= answer.description %></li>
+<% end %>
